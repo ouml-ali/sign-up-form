@@ -1,0 +1,83 @@
+:root {
+    --light-yellow-color : #F9FC6D;
+    --dark-blue-color : #141E29;
+    --light-blue-color : #02485A;
+    --dark-green-color: #00777C;
+    --light-green-color: #27A785;
+}
+
+@font-face {
+    font-family: 'Fonarto Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Fonarto Regular'), url('./assets/fonts/fonarto.regular.woff') format('woff');
+}
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.logo {
+    font-family: 'Fonarto Regular';
+    font-size: 1.5rem;
+    color: var(--light-yellow-color);
+}
+
+.container {
+    display: flex;
+}
+.form-sidebar {
+    background-image: url(./assets/images/minimal-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    width: 40vh;
+    height: 100vh;
+}
+
+.sign-up-container {
+    height: 100vh;
+}

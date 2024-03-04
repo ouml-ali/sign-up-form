@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Triple - Sign up</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-sidebar">
+            <span class="logo">Triple</span>
+        </div>
+        <section class="sign-up-container">
+
+            <header>
+                <h2>Sign up <em>now</em> to get started</h2>
+            </header>
+
+            <main>
+                <form>
+                    <section class="form-row">
+                        <div class="form-control">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" name="first_name" required>
+                        </div>
+                        <div class="form-control">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" name="last_name" required>
+                        </div>
+                    </section>
+
+                    <section class="form-row">
+                        <div class="form-control">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </section>
+
+                    <section class="form-row">
+                        <div class="form-control">
+                            <label for="phone-number">Phone Number <span>(optional)</span></label>
+                            <input type="tel" id="phone-number" name="phone_number">
+                        </div>
+                    </section>
+
+                    <section class="form-row">
+                        <div class="form-control">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                    </section>
+
+                    <section class="form-row">
+                        <div class="form-control">
+                            <label for="tos-check">
+                                <input type="checkbox" id="tos-check" name="tos_check" required>
+                                I agree with Triple's <a href="#">Terms of Service</a>, <a href="#">Privacy Policy</a>, and default <a href="#">Notification Settings.</a>
+                            </label>
+                        </div>
+                    </section>
+
+                    <section class="form-row">
+                        <div class="form-control">
+                            <button type="submit">Create Account</button>
+                        </div>
+                    </section>
+                </form>
+            </main>
+
+            <footer>
+                <p>
+                    Already have an account?
+                    <a href="#">Sign In</a>
+                </p>
+            </footer>
+        </section>
+    </div>
+</body>
+</html>
