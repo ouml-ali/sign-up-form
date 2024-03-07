@@ -85,7 +85,8 @@ table {
 }
 
 .container {
-    height: 100%;
+    height: 100vh;
+    overflow-y: auto;
 }
 
 .logo {
@@ -104,6 +105,8 @@ table {
     height: 100%;
     float: left;
     display: none;
+    position: sticky;
+    top: 0;
 }
 
 .sign-up-container {
