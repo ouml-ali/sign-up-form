@@ -1,7 +1,7 @@
 :root {
     --light-yellow-color : #F9FC6D;
     --dark-blue-color : #141E29;
-    --light-blue-color : #02485A;
+    --light-blue-color : #2b4159;
     --dark-green-color: #00777C;
     --light-green-color: #27A785;
 
@@ -12,6 +12,11 @@
     --small-padding : 1rem;
     --medium-padding : 1.5rem;
     --large-padding : 2rem;
+    --larger-padding : 3rem;
+
+    --form-control-color : #141E29;
+    --form-control-disabled : #959495;
+
 }
 
 @font-face {
@@ -59,8 +64,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
+body, html {
 	line-height: 1;
+    height: 100%;
 }
 ol, ul {
 	list-style: none;
@@ -78,6 +84,10 @@ table {
 	border-spacing: 0;
 }
 
+.container {
+    height: 100%;
+}
+
 .logo {
     font-family: 'Fonarto Regular';
     font-size: 1.5rem;
@@ -91,22 +101,32 @@ table {
     background-position: center;
     padding: var(--large-padding, 1.5rem);
     width: 40vh;
-    height: 100vh;
+    height: 100%;
     float: left;
     display: none;
 }
 
 .sign-up-container {
-    height: 100vh;
     font-family: 'Mona Sans Regular';
     color: #141E29;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding: var(--medium-padding, 1.5rem);
-    gap: 3rem;
-    max-width: 494px;
-    margin:auto;
+    max-width: 554px;
+    height: 100%;
+    margin-inline: auto;
+}
+
+.sign-up-container > * {
+   padding-block: var(--medium-padding);
+}
+
+.sign-up-container > :first-child {
+    margin-top: auto;
+}
+
+.sign-up-container > :last-child {
+    margin-bottom: auto;
 }
 
 form {
@@ -117,8 +137,9 @@ form {
 
 form > .form-row {
     display: flex;
-    gap: var(--medium-gap, 1.5rem);
+    justify-content: space-between;
     flex-wrap: wrap;
+    gap: var(--medium-gap, 1.5rem);
 }
 
 form .form-row > .form-control {
@@ -135,23 +156,67 @@ h2 {
 h2, label:not([for=tos-check]) {
     font-weight: bold;
 }
+label > span {
+    color: tomato;
+}
 
 input, button {
     appearance: none;
+    font-size: 1rem;
 }
 
 input:not([type=checkbox]) {
-    border: 1px solid rgb(228, 228, 228);
+    border: 1px solid rgb(230, 230, 230);
     border-radius: 5px;
     padding: 1rem;
+    transition: ease-in-out .3s;
+}
+
+input:not([type=checkbox]):hover, input:not([type=checkbox]):focus, input:not([type=checkbox]):active {
+    border: 1px solid rgb(230, 230, 230);
+    outline: none;
+    box-shadow: 0px 0px 0px 5px #141e2917 ;
+}
+
+input:not([type=checkbox]):invalid:focus {
+    border: 1px tomato solid;
+}
+
+input:not([type=checkbox]):valid:focus {
+    border: 1px var(--light-green-color) solid;
 }
 
 input[type=checkbox] {
     border: 1px solid rgb(228, 228, 228);
     padding: calc(var(--small-padding) * (0.6));
+    background-color: #fff;
     margin: 0;
     width: 0.5rem;
     height: 0.5rem;
+    display: grid;
+    place-content: center;
+
+}
+
+input[type=checkbox]::before {
+    content: '';
+    background-color:var(--form-control-color);
+    width: 0.8rem;
+    height: 0.8rem;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    transform-origin: center;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type=checkbox]:checked::before{
+    transform: scale(1);
+}
+
+input[type="checkbox"]:disabled {
+    --form-control-color: var(--form-control-disabled);
+    color: var(--form-control-disabled);
+    cursor: not-allowed;
 }
 
 [for=tos-check] {
@@ -180,18 +245,32 @@ button {
     padding-block: 1rem;
     border-style: none;
     border-radius: 2rem;
+    transition: ease-in-out 0.3s;
 }
 
-@media screen and (min-width: 494px) {
+button:hover {
+    background-color: var(--light-blue-color);
+    cursor: pointer;
+}
+
+button:active {
+    background-color: var(--light-blue-color);
+}
+
+a {
+    color: var(--dark-blue-color);
+}
+
+@media screen and (min-width: 554px) {
     form .form-row:first-child > .form-control {
-        width: fit-content;
+        flex-basis: content;
     }
 }
 
-@media screen and (min-width: 988px ) {
+@media screen and (min-width: 1108px ) {
     .form-sidebar {
-        width: calc(988px/2);
         display: block;
+        width: calc(988px/2);
     }
 }
 
