@@ -5,6 +5,8 @@
     --dark-green-color: #00777C;
     --light-green-color: #27A785;
 
+    --display-err-msg : none;
+
     --small-gap : 0.5rem;
     --medium-gap : 1.5rem;
     --large-gap : 2rem;
@@ -32,10 +34,6 @@
     font-weight: normal;
     src: url('./assets/fonts/MonaSans-Regular.otf');
 }
-
-
-
-
 
 
 html, body, div, span, applet, object, iframe,
@@ -94,7 +92,17 @@ table {
     font-size: 1.5rem;
     color: var(--light-yellow-color);
 }
+.img-credit {
+    font-family:'Mona Sans Regular', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.8rem;
+    color: var(--light-yellow-color);
+    margin-top: auto;
+    justify-self: end;
+}
 
+.img-credit > a {
+    color: var(--light-yellow-color);
+}
 .form-sidebar {
     background-image: url(./assets/images/minimal-background.jpg);
     background-repeat: no-repeat;
@@ -110,7 +118,7 @@ table {
 }
 
 .sign-up-container {
-    font-family: 'Mona Sans Regular';
+    font-family: 'Mona Sans Regular', Tahoma, Geneva, Verdana, sans-serif;
     color: #141E29;
     display: flex;
     flex-direction: column;
@@ -172,16 +180,20 @@ input:not([type=checkbox]) {
     border: 1px solid rgb(230, 230, 230);
     border-radius: 5px;
     padding: 1rem;
-    transition: ease-in-out .3s;
+    transition: ease-in-out 0.1s;
 }
 
 input:not([type=checkbox]):hover, input:not([type=checkbox]):focus, input:not([type=checkbox]):active {
     border: 1px solid rgb(230, 230, 230);
     outline: none;
-    box-shadow: 0px 0px 0px 5px #141e2917 ;
+    box-shadow: 0px 0px 0px 5px #20334215 ;
 }
 
 input:not([type=checkbox]):invalid:focus {
+    border: 1px tomato solid;
+}
+
+input[type=checkbox]:invalid {
     border: 1px tomato solid;
 }
 
@@ -272,7 +284,9 @@ a {
 
 @media screen and (min-width: 1108px ) {
     .form-sidebar {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         width: calc(988px/2);
     }
 }
