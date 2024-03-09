@@ -154,10 +154,10 @@ form > .form-row {
 }
 
 form .form-row > .form-control {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: var(--small-gap, 0.5rem);
-    width: 100vw;
 }
 
 h2 {
@@ -244,12 +244,18 @@ form .form-row:nth-child(5) > .form-control {
 }
 
 form .form-row:last-child {
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 form .form-row:last-child div:last-child {
     font-size: calc(1rem * 0.9);
 }
+
+form .form-row:last-child div:first-child {
+    width: 100%;
+}
+
 
 button {
     background-color: var(--dark-blue-color);
@@ -276,11 +282,6 @@ a {
     color: var(--dark-blue-color);
 }
 
-@media screen and (min-width: 554px) {
-    form .form-row:first-child > .form-control {
-        flex-basis: content;
-    }
-}
 
 @media screen and (min-width: 1108px ) {
     .form-sidebar {
